@@ -719,7 +719,7 @@ function convertUnicodeCodePointsToBytes(unicode_codes, encoding) {
   if (convert_function) {
     return convert_function(unicode_codes);
   }
-  return [];
+  return unicode_codes;
 }
 
 function convertBytesToUnicodeCodePoints(data_bytes, encoding) {
@@ -728,7 +728,7 @@ function convertBytesToUnicodeCodePoints(data_bytes, encoding) {
   if (convert_function) {
     return convert_function(data_bytes);
   }
-  return [];
+  return data_bytes;
 }
 
 // 'あい' => r'\u3042\u3044'
