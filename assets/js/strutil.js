@@ -717,6 +717,7 @@ function convertUnicodeCodePointsToBytes(unicode_codes, encoding) {
   var normalized_encoding = normalizeEncodingName(encoding);
   var convert_function = OUTPUT_CONVERTERS[normalized_encoding];
   var ret_codes = [];
+  console.log(unicode_codes);
   if (convert_function) {
     return convert_function(unicode_codes);
   }
@@ -732,6 +733,7 @@ function convertBytesToUnicodeCodePoints(data_bytes, encoding) {
   var normalized_encoding = normalizeEncodingName(encoding);
   var convert_function = INPUT_CONVERTERS[normalized_encoding];
   var ret_codes = [];
+  console.log(data_bytes);
   if (convert_function) {
     return convert_function(data_bytes);
   }
