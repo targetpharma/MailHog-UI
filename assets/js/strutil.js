@@ -716,19 +716,31 @@ var INPUT_CONVERTERS = {
 function convertUnicodeCodePointsToBytes(unicode_codes, encoding) {
   var normalized_encoding = normalizeEncodingName(encoding);
   var convert_function = OUTPUT_CONVERTERS[normalized_encoding];
+  var ret_codes = [];
   if (convert_function) {
     return convert_function(unicode_codes);
   }
-  return convertUtf8BytesToUnicodeCodePoints(unicode_codes);
+
+  for (var i = 0; i < unicode_codes.length; ++i) {
+    var utf8_byte = unicode_codes[i];
+    ret_codes.push(utf8_byte);
+  }
+  return ret_codes; 
 }
 
 function convertBytesToUnicodeCodePoints(data_bytes, encoding) {
   var normalized_encoding = normalizeEncodingName(encoding);
   var convert_function = INPUT_CONVERTERS[normalized_encoding];
+  var ret_codes = [];
   if (convert_function) {
     return convert_function(data_bytes);
   }
-  return convertUtf8BytesToUnicodeCodePoints(data_bytes);
+
+  for (var i = 0; i < unicode_codes.length; ++i) {
+    var utf8_byte = unicode_codes[i];
+    ret_codes.push(utf8_byte);
+  }
+  return ret_codes;
 }
 
 // 'あい' => r'\u3042\u3044'
