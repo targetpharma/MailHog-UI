@@ -368,6 +368,7 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
           }
         }
         console.log(data.$cidMap)
+        console.log("hello cidMap")
         // TODO
         // - scan HTML parts for elements containing CID URI and replace
 
@@ -505,6 +506,7 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
   }
   $scope.getMessageHTML = function(message) {
     console.log(message);
+    console.log("hello message");
     for(var header in message.Content.Headers) {
       if(header.toLowerCase() == 'content-type') {
         if(message.Content.Headers[header][0].match("text/html")) {
