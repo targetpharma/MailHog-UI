@@ -736,8 +736,8 @@ function convertBytesToUnicodeCodePoints(data_bytes, encoding) {
     return convert_function(data_bytes);
   }
 
-  for (var i = 0; i < unicode_codes.length; ++i) {
-    var utf8_byte = unicode_codes[i];
+  for (var i = 0; i < data_bytes.length; ++i) {
+    var utf8_byte = data_bytes[i];
     ret_codes.push(utf8_byte);
   }
   return ret_codes;
